@@ -2,7 +2,7 @@
 <div class="notification is-danger">
     <button class="delete"></button>
          <div>
-            <div>{{ __('Whoops! Something went wrong.') }}</div>
+            <div>{{ 'Ups! Algo salió mal.' }}</div>
 
             <ul>
                 @foreach ($errors->all() as $error)
@@ -16,7 +16,7 @@
 <div class="notification is-success">
     <button class="delete"></button>
          <div>
-            <div>{{ __('Message') }}</div>
+            <div>{{ 'Mensaje' }}</div>
             <p>{{session('message')}}</p>
         </div>
 </div>

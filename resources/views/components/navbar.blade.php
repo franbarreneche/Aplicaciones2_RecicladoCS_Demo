@@ -22,11 +22,11 @@
         <div class="navbar-item">
           <div class="buttons">
             @guest
-            <a class="button is-info" href="">
-                <strong>{{__('Register')}}</strong>
+            <a class="button is-info" href="https://github.com/franbarreneche/Aplicaciones2_RecicladoCS_login">
+                <strong>GitHub</strong>
               </a>
               <a class="button is-light" href="{{route('login')}}">
-                {{__('Login')}}
+                Entrar
               </a>
             @endguest
             @auth
@@ -41,7 +41,7 @@
             <form action="{{route('logout')}}" method="POST">
                 @csrf
             <button type="submit" class="button is-danger">
-                {{__('Logout')}}
+                Salir
             </button>
             </form>
             @endauth

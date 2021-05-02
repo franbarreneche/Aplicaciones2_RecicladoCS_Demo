@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
         ]);
         User::create([
             'username' => 'ana_coordiandora',
-            'email' => 'ana@admin.com',
+            'email' => 'ana@gmail.com',
             'password' => Hash::make('123456'),
             'rol_id' => 3
         ]);

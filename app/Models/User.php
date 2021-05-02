@@ -24,4 +24,8 @@ class User extends Authenticatable
 
     public $timestamps = false;
     public $table= 'usuarios';
+
+    public function rol() {
+        return $this->belongsTo(Rol::class);
+    }
 }

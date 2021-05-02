@@ -16,11 +16,6 @@
         <a class="navbar-item" href="/">
           Home
         </a>
-        @auth
-        <a class="navbar-item" href="{{route('dashboard')}}">
-          Dashboard
-        </a>
-        @endauth
       </div>
 
       <div class="navbar-end">

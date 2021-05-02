@@ -10,5 +10,5 @@ class Rol extends Model
     use HasFactory;
 
     public $timestamps = false;
-    public $table= 'usuarios';
+    public $table= 'roles';
 }

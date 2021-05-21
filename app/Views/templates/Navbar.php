@@ -23,7 +23,7 @@
                 <div class="buttons">
                     <?php if ($usuario) { ?>
                         <form action="<?php echo route('logout') ?>" method="POST">
-                            <a class="button is-link is-light">
+                            <a class="button is-link">
                                 <span class="icon is-small">
                                     <i class="far fa-user"></i>
                                 </span>

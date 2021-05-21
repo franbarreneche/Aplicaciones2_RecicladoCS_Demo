@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+        <link rel="stylesheet" href="<?php echo asset('css/app.css') ?>">
 
         <!-- Icons -->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" defer></script>

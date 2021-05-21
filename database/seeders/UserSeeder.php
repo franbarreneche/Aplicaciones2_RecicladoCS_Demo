@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Usuario;
+use App\Models\Rol;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -15,23 +16,25 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'username' => 'admin',
-            'email' => 'admin@admin.com',
-            'password' => Hash::make('123456'),
-            'rol_id' => 1
-        ]);
-        User::create([
-            'username' => 'juan_municipal',
-            'email' => 'juan@gmail.com',
-            'password' => Hash::make('123456'),
-            'rol_id' => 2
-        ]);
-        User::create([
-            'username' => 'ana_coordiandora',
-            'email' => 'ana@gmail.com',
-            'password' => Hash::make('123456'),
-            'rol_id' => 3
-        ]);
+        $admin = new Usuario();
+        $admin->setUsername("admin");
+        $admin->setEmail("admin@admin.com");
+        $admin->setPassword(Hash::make('123456'));
+        $admin->setRol((new Rol())->buscarPorId(1)); //el 1 es el admin
+        $admin->guardar();
+
+        $municipal = new Usuario();
+        $municipal->setUsername("juan_municipal");
+        $municipal->setEmail("juan@gmail.com");
+        $municipal->setPassword(Hash::make('123456'));
+        $municipal->setRol((new Rol())->buscarPorId(2)); //el 1 es el municipal
+        $municipal->guardar();
+
+        $coordinador = new Usuario();
+        $coordinador->setUsername("ana_coordiandora");
+        $coordinador->setEmail("ana@gmail.com");
+        $coordinador->setPassword(Hash::make('123456'));
+        $coordinador->setRol((new Rol())->buscarPorId(3)); //el 1 es el coordinador
+        $coordinador->guardar();
     }
 }

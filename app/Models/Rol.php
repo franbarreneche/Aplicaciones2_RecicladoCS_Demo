@@ -22,12 +22,14 @@ class Rol extends Modelo
         $this->nombre = $nombre;
     }
 
+    //implementacion de metodos abstractos heredados de modelo
     function getTodos() {
         return $this->conexion->table($this->tabla)->get();
     }
 
     function guardar() {
-        return '//TODO';
+        $id = $this->conexion->table($this->tabla)->insertGetId(["nombre" => $this->nombre]);
+        $this->id = $id;
     }
 
     function buscarPorId($id) {

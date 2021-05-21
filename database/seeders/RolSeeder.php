@@ -14,8 +14,16 @@ class RolSeeder extends Seeder
      */
     public function run()
     {
-        Rol::create(["nombre" => "Admin"]);
-        Rol::create(["nombre" => "Municipal"]);
-        Rol::create(["nombre" => "Coordinador"]);
+        $admin = new Rol();
+        $admin->setNombre("Admin");
+        $admin->guardar();
+
+        $municipal = new Rol();
+        $municipal->setNombre("Municipal");
+        $municipal->guardar();
+
+        $coordinador = new Rol();
+        $coordinador->setNombre("Coordinador");
+        $coordinador->guardar();
     }
 }

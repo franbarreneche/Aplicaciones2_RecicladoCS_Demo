@@ -52,12 +52,19 @@ class Usuario extends Modelo implements Authenticatable
         $this->rol_id = $rol->getId();
     }
 
+    //implementacion de metodos abstractos heredados de Modelo
     function getTodos() {
         return $this->conexion->table($this->tabla)->get();
     }
 
     function guardar() {
-        return '//TODO';
+        $id = $this->conexion->table($this->tabla)->insertGetId([
+            "username" => $this->username,
+            "email" => $this->email,
+            "password" => $this->password,
+            "rol_id" => $this->rol_id
+            ]);
+        $this->id = $id;
     }
 
     function buscarPorId($id) {
@@ -91,6 +98,8 @@ class Usuario extends Modelo implements Authenticatable
     }
 
 
+
+    //implementacion interface autenticacion
     public function getAuthIdentifierName() {
         return 'id';
     }
@@ -104,15 +113,15 @@ class Usuario extends Modelo implements Authenticatable
     }
 
     public function getRememberToken() {
-
+        //TODO
     }
 
     public function setRememberToken($value) {
-
+        //TODO
     }
 
     public function getRememberTokenName() {
-
+        //TODO
     }
 
 }

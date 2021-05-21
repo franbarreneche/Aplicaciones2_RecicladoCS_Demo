@@ -10,7 +10,7 @@ class Usuario extends Modelo implements Authenticatable
     private $username;
     private $email;
     private $password;
-    private $rol_id;
+    private $rol;
 
     protected $rememberTokenName = false;
 
@@ -33,7 +33,7 @@ class Usuario extends Modelo implements Authenticatable
     }
 
     function getRol() {
-        return (new Rol())->buscarPorId($this->rol_id);
+        return $this->rol;
     }
 
     function setUsername($nombre) {
@@ -48,8 +48,8 @@ class Usuario extends Modelo implements Authenticatable
         $this->password = $password;
     }
 
-    function setRol(Rol $rol) {
-        $this->rol_id = $rol->getId();
+    function setRol($rol) {
+        $this->rol = $rol;
     }
 
     //implementacion de metodos abstractos heredados de Modelo
@@ -62,7 +62,7 @@ class Usuario extends Modelo implements Authenticatable
             "username" => $this->username,
             "email" => $this->email,
             "password" => $this->password,
-            "rol_id" => $this->rol_id
+            "rol_id" => $this->rol->getId()
             ]);
         $this->id = $id;
     }
@@ -94,7 +94,7 @@ class Usuario extends Modelo implements Authenticatable
         $this->setUsername($registro->username);
         $this->setEmail($registro->email);
         $this->setPassword($registro->password);
-        $this->rol_id = $registro->rol_id;
+        $this->rol = (new Rol())->buscarPorId($registro->rol_id);
     }
 
 

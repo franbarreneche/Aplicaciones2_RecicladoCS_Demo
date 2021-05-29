@@ -47,13 +47,13 @@
                         </span>
                         <span>Usuarios</span>
                     </a>
-                    <a class="button is-large">
+                    <a class="button is-large" >
                         <span class="icon is-medium">
                             <i class="fas fa-industry"></i>
                         </span>
                         <span>Centros</span>
                     </a>
-                    <a class="button is-large">
+                    <a class="button is-large" href="<?php echo route('ciudadanos.lista')?>">
                         <span class="icon is-medium">
                             <i class="fas fa-users"></i>
                         </span>

@@ -28,6 +28,6 @@ Route::post('logout',[UsuarioController::class,'logout'])->name('logout');
 
 }); */
 
-Route::get('ciudadanos',[CiudadanoController::class,'listarTodosCiudadanos']);
+Route::get('ciudadanos',[CiudadanoController::class,'listarTodosCiudadanos'])->name('ciudadanos.lista');
 
 

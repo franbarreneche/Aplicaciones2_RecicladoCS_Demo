@@ -58,7 +58,14 @@ class Ciudadano extends Modelo {
 
     //implementacion de metodos abstractos heredados de Modelo
     function getTodos() {
-        //TODO
+        $registros = $this->conexion->table($this->tabla)->get();
+        $ciudadanos = [];
+        foreach($registros as $registro) {
+            $ciudadano = new Ciudadano();
+            $ciudadano->llenar($registro);
+            array_push($ciudadanos,$ciudadano);
+        }
+        return $ciudadanos;
     }
 
     function guardar() {
@@ -87,7 +94,7 @@ class Ciudadano extends Modelo {
         //TODO
     }
 
-    private function llenar($registro) {
+    function llenar($registro) {
         $this->setId($registro->id);
         $this->setNombre($registro->nombre);
         $this->setApellido($registro->apellido);

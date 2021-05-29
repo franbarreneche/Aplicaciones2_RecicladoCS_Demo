@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\CiudadanoController;
 use App\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,11 @@ Route::get('login',[UsuarioController::class,'mostrarVistaLogin'])->name('login'
 
 Route::post('login',[UsuarioController::class,'login'])->name('login');
 Route::post('logout',[UsuarioController::class,'logout'])->name('logout');
+
+/* Route::middleware('auth')->group(function() {
+
+}); */
+
+Route::get('ciudadanos',[CiudadanoController::class,'listarTodosCiudadanos']);
+
+

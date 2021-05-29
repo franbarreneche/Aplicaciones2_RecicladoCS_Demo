@@ -16,14 +16,6 @@ class DashboardVista extends Vista{
 
     function mostrar() {
         $usuario =$this->request->user();
-        /**dd($u);
-        if($u) {
-            $usuario = new Usuario();
-            $usuario->setId($u->id);
-            $usuario->setUsername($u->username);
-            $usuario->setEmail($u->email);
-            $usuario->setRol((new Rol())->buscarPorId($u->rol_id));
-        } else $usuario = $u;*/
         $vistaDashboard = require 'templates/DashboardTemplate.php';
         return $vistaDashboard;
     }

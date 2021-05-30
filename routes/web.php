@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\CentrosController;
 use App\Controllers\CiudadanoController;
 use App\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
@@ -29,5 +30,6 @@ Route::post('logout',[UsuarioController::class,'logout'])->name('logout');
 }); */
 
 Route::get('ciudadanos',[CiudadanoController::class,'listarTodosCiudadanos'])->name('ciudadanos.lista');
+Route::get('centros',[CentrosController::class,'listarTodosCentros'])->name('centros.lista');
 
 

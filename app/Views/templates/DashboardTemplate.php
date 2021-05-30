@@ -47,7 +47,7 @@
                         </span>
                         <span>Usuarios</span>
                     </a>
-                    <a class="button is-large" >
+                    <a class="button is-large" href="<?php echo route('centros.lista')?>">
                         <span class="icon is-medium">
                             <i class="fas fa-industry"></i>
                         </span>

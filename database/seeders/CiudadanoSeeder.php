@@ -14,7 +14,7 @@ class CiudadanoSeeder extends Seeder
      */
     public function run()
     {
-        $this->crearCiudadanoAleatorio(20);
+        $this->crearCiudadanoAleatorio(40);
     }
 
     private function crearCiudadanoAleatorio($cantidad) {

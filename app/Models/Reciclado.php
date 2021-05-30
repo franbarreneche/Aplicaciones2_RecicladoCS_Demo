@@ -23,7 +23,11 @@ class Reciclado extends Modelo {
         return $this->transporte;
     }
 
-    function getFechaConecto() {
+    function getObjeto() {
+        return $this->objeto;
+    }
+
+    function getFechaContacto() {
         return $this->fecha_contacto;
     }
 

@@ -36,6 +36,15 @@ class Centro extends Modelo {
         return $this->coordinador;
     }
 
+    function getReciclados() {
+        $registros = $this->conexion->table('reciclados')->where('centro_id',$this->getId())->get();
+        $reciclados = [];
+        foreach($registros as $registro) {
+            array_push($reciclados,(new Reciclado())->buscarPorId($registro->reciclado_id));
+        }
+        return $reciclados;
+    }
+
     function setNombre($nombre) {
         $this->nombre = $nombre;
     }

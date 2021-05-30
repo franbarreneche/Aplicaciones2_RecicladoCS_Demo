@@ -9,6 +9,7 @@
             <div class="table-container">
             <table class="table is-fullwidth is-striped">
                 <thead>
+                    <th width="10px">ID</th>
                     <th width="20px">Sigla</th>
                     <th>Nombre</th>
                     <th>Acciones</th>
@@ -16,11 +17,13 @@
             <?php
             foreach($this->centros as $centro) {
                 echo "<tr>";
+                echo "<td>".$centro->getId()."</td>";
                 echo "<td>".$centro->getSigla()."</td>";
                 echo "<td>".$centro->getNombre()."</td>";
                 echo "<td>";
                 echo "<div class='buttons'>";
-                echo "<a class='button is-info is-small' href=''>Ver</a>";
+                $verReciclados = route('centros.reciclados',$centro->getId());
+                echo "<a class='button is-info is-small' href='$verReciclados'>Reciclados</a>";
                 echo "<button class='button is-danger is-small' onclick='alert()'>Borrar</button>";
                 echo "</div>";
                 echo "</td>";

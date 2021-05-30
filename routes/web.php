@@ -32,5 +32,6 @@ Route::post('logout',[UsuarioController::class,'logout'])->name('logout');
 Route::get('ciudadanos',[CiudadanoController::class,'listarTodosCiudadanos'])->name('ciudadanos.lista');
 Route::get('ciudadanos/{idCiudadano}/centros',[CiudadanoController::class,'mostrarCentrosDondeColabora'])->name('ciudadanos.centros');
 Route::get('centros',[CentrosController::class,'listarTodosCentros'])->name('centros.lista');
+Route::get('centros/{idCentro}/reciclados',[CentrosController::class,'mostrarRecicladosEnCentro'])->name('centros.reciclados');
 
 

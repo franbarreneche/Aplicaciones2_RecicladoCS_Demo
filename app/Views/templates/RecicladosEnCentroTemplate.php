@@ -7,17 +7,20 @@
         <div class="box">
             <h2 class="subtitle">Lista de Reciclados En Centro <?php echo $this->centro->getId() ?></h2>
             <div class="field">
-                <label class="label">Sigla del Centro</label>
+                <label class="label">Sigla del Centro:</label>
                 <input class="input" type="text" value="<?php echo $this->centro->getSigla() ?>" disabled>
             </div>
             <div class="field">
-                <label class="label">Nombre del Centro</label>
+                <label class="label">Nombre del Centro:</label>
                 <input class="input" type="text" value="<?php echo $this->centro->getNombre() ?>" disabled>
             </div>
             <div class="table-container">
+            <div class="field">
+                <label class="label">Lista de Reciclados:</label>
+            </div>
             <table class="table is-fullwidth is-striped">
                 <thead>
-                    <th>ID</th>
+                    <th width="10px">ID</th>
                     <th>Nombre Ciudadano</th>
                     <th>DNI Ciudadano</th>
                     <th>Objeto</th>

@@ -82,7 +82,7 @@ class Ciudadano extends Modelo {
     function buscarPorId($id) {
         $ciudadano = $this->conexion->table($this->tabla)->where('id', $id)->first();
         if(!$ciudadano) throw new ModelNotFoundException('Ciudadano no existente');
-        $this->llenar($$ciudadano);
+        $this->llenar($ciudadano);
         return $this;
     }
 

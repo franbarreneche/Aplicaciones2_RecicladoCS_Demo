@@ -14,10 +14,10 @@ class CiudadanoSeeder extends Seeder
      */
     public function run()
     {
-        $this->createRandomCiudadano(20);
+        $this->crearCiudadanoAleatorio(20);
     }
 
-    private function createRandomCiudadano($cantidad) {
+    private function crearCiudadanoAleatorio($cantidad) {
         $faker = \Faker\Factory::create('es_ES');
         for($i=0;$i<$cantidad;$i++) {
             $ciudadano = new Ciudadano();

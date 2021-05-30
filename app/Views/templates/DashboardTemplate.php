@@ -23,7 +23,7 @@
                     Recuerde lavarse las manos y protegerse del <em class="has-text-info">#COVID19</em>
                     <br>
                     <time><?php echo now()->format('d/m/Y') ?></time>
-                    <time><?php now()->format('h:i') ?>hs</time>
+                    <time><?php echo now()->setTimezone('-3')->format('H:i') ?>hs</time>
                 </div>
             </div>
         </div>

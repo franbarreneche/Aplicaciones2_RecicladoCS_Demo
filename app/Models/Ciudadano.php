@@ -36,6 +36,15 @@ class Ciudadano extends Modelo {
         return $this->telefono;
     }
 
+    function getCentrosRecolecta() {
+        $registros = $this->conexion->table('recolectores')->where('voluntario_id',$this->getid())->get();
+        $centros = [];
+        foreach($registros as $registro ){
+            array_push($centros,(new Centro())->buscarPorId($registro->centro_id));
+        }
+        return $centros;
+    }
+
     function setNombre($nombre) {
         $this->nombre = $nombre;
     }

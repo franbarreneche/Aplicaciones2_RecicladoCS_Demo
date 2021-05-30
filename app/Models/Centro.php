@@ -82,7 +82,7 @@ class Centro extends Modelo {
     function buscarPorId($id) {
         $centro = $this->conexion->table($this->tabla)->where('id', $id)->first();
         if(!$centro) throw new ModelNotFoundException('Centro no existente');
-        $this->llenar($$centro);
+        $this->llenar($centro);
         return $this;
     }
 

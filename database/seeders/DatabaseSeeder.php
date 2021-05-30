@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             CiudadanoSeeder::class,
             CentroSeeder::class,
             RecolectoresSeeder::class,
+            RecicladoSeeder::class,
             UserSeeder::class,
         ]);
     }

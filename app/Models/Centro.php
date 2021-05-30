@@ -40,7 +40,7 @@ class Centro extends Modelo {
         $registros = $this->conexion->table('reciclados')->where('centro_id',$this->getId())->get();
         $reciclados = [];
         foreach($registros as $registro) {
-            array_push($reciclados,(new Reciclado())->buscarPorId($registro->reciclado_id));
+            array_push($reciclados,(new Reciclado())->buscarPorId($registro->id));
         }
         return $reciclados;
     }

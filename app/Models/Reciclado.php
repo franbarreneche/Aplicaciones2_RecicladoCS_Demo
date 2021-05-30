@@ -13,6 +13,9 @@ class Reciclado extends Modelo {
     private $recolector;
     private $centro;
 
+    const TRANSPORTES = ["Pie","Auto","Moto","Camioneta"];
+    const OBJETOS = ["Chatarra","Electronicos","Otros"];
+
 
     function __construct(){
         parent::__construct('reciclados');

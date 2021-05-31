@@ -15,7 +15,7 @@ class DashboardVista extends Vista{
     }
 
     function mostrar() {
-        $usuario =$this->request->user();
+        $usuario = $this->getUsuario();
         $vistaDashboard = require 'templates/DashboardTemplate.php';
         return $vistaDashboard;
     }

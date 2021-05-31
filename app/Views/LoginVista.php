@@ -9,14 +9,12 @@ class LoginVista extends Vista{
         parent::__construct($request);
     }
 
+    function actualizar() {
+        return $this->mostrar();
+    }
+
     function mostrar() {
-        $u =$this->request->user();
-        if($u) {
-            $usuario = new Usuario();
-            $usuario->setId($u->id);
-            $usuario->setUsername($u->username);
-            $usuario->setEmail($u->email);
-        } else $usuario = $u;
+        $usuario = $this->getUsuario();
         $vistaLogin = require 'templates/LoginTemplate.php';
         return $vistaLogin;
     }

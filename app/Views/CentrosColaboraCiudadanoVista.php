@@ -15,7 +15,7 @@ class CentrosColaboraCiudadanoVista extends Vista{
     }
 
     function mostrar() {
-        $usuario =$this->request->user();
+        $usuario = $this->getUsuario();
         $vistaCentrosColaboraCiudadano = require 'templates/CentrosColaboraCiudadanoTemplate.php';
         return $vistaCentrosColaboraCiudadano;
     }

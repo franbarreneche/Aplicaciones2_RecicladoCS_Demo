@@ -15,7 +15,7 @@ class ListaCiudadanosVista extends Vista{
     }
 
     function mostrar() {
-        $usuario =$this->request->user();
+        $usuario = $this->getUsuario();
         $vistaListaCiudadanos = require 'templates/CiudadanoListTemplate.php';
         return $vistaListaCiudadanos;
     }

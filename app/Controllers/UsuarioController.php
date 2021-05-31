@@ -15,7 +15,9 @@ class UsuarioController extends Controller
 {
 
     public function mostrarVistaLogin(Request $request) {
-        return (new LoginVista($request))->mostrar();
+        if(!request()->user())
+            return (new LoginVista($request))->actualizar();
+        return redirect()->route('dashboard');
     }
 
     public function login(Request $request) {
@@ -42,7 +44,7 @@ class UsuarioController extends Controller
 
         Auth::login($usuario);
 
-        return (new DashboardVista($request))->actualizar();
+        return redirect()->route('dashboard');
     }
 
     public function logout(Request $request) {

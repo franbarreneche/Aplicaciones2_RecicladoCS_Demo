@@ -3,7 +3,9 @@
 use App\Controllers\CentrosController;
 use App\Controllers\CiudadanoController;
 use App\Controllers\UsuarioController;
+use App\Views\DashboardVista;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,13 +27,16 @@ Route::get('login',[UsuarioController::class,'mostrarVistaLogin'])->name('login'
 Route::post('login',[UsuarioController::class,'login'])->name('login');
 Route::post('logout',[UsuarioController::class,'logout'])->name('logout');
 
-/* Route::middleware('auth')->group(function() {
+Route::middleware('auth')->group(function() {
+    Route::get('dashboard',function(Request $request) {
+        return (new DashboardVista($request))->actualizar();
+    })->name('dashboard');
+    Route::get('ciudadanos',[CiudadanoController::class,'listarTodosCiudadanos'])->name('ciudadanos.lista');
+    Route::get('ciudadanos/{idCiudadano}/centros',[CiudadanoController::class,'mostrarCentrosDondeColabora'])->name('ciudadanos.centros');
+    Route::get('centros',[CentrosController::class,'listarTodosCentros'])->name('centros.lista');
+    Route::get('centros/{idCentro}/reciclados',[CentrosController::class,'mostrarRecicladosEnCentro'])->name('centros.reciclados');
+});
 
-}); */
 
-Route::get('ciudadanos',[CiudadanoController::class,'listarTodosCiudadanos'])->name('ciudadanos.lista');
-Route::get('ciudadanos/{idCiudadano}/centros',[CiudadanoController::class,'mostrarCentrosDondeColabora'])->name('ciudadanos.centros');
-Route::get('centros',[CentrosController::class,'listarTodosCentros'])->name('centros.lista');
-Route::get('centros/{idCentro}/reciclados',[CentrosController::class,'mostrarRecicladosEnCentro'])->name('centros.reciclados');
 
 

@@ -40,7 +40,7 @@ class CentroSeeder extends Seeder
         ]);
         $this->crearCentroDesdeArreglo([
             "nombre" => "Delegación Municipal de Santa María",
-            "sigla" => "DSN",
+            "sigla" => "DSM",
             "horario" => "de 9 a 16hs",
             "telefono" => "2926-422741",
             "coordinador_id" => 4

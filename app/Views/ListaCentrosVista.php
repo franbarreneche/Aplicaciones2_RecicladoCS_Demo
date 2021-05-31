@@ -15,7 +15,7 @@ class ListaCentrosVista extends Vista{
     }
 
     function mostrar() {
-        $usuario =$this->request->user();
+        $usuario = $this->getUsuario();
         $vistaListaCentro = require 'templates/CentroListTemplate.php';
         return $vistaListaCentro;
     }

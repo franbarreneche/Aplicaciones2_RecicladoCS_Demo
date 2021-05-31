@@ -26,7 +26,7 @@
                 echo "<button class='button is-info is-small' onclick='alert()'>Ver</button>";
                 $verCentros = route('ciudadanos.centros',$ciudadano->getId());
                 echo "<a class='button is-link is-small' href='$verCentros'>Centros</a>";
-                echo "<button class='button is-danger is-small' onclick='alert()'>Ver</button>";
+                echo "<button class='button is-danger is-small' onclick='alert()'>Borrar</button>";
                 echo "</div></td>";
                 echo "</tr>";
             }

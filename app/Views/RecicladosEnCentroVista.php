@@ -15,7 +15,7 @@ class RecicladosEnCentroVista extends Vista{
     }
 
     function mostrar() {
-        $usuario =$this->request->user();
+        $usuario = $this->getUsuario();
         $vistaRecicladosEnCentro = require 'templates/RecicladosEnCentroTemplate.php';
         return $vistaRecicladosEnCentro;
     }

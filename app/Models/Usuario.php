@@ -109,7 +109,7 @@ class Usuario extends Modelo implements Authenticatable
     }
 
     public function getAuthPassword() {
-        return $this->getPassword();
+        return $this->password;
     }
 
     public function getRememberToken() {
